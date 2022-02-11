@@ -1,0 +1,52 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- Shortlist
+- give_info
+- goodbye
+- greet
+- hire
+- offer_package
+- shortlist
+entities:
+- post
+- salary
+- experience
+- skills
+- shortlist
+slots:
+  post:
+    type: text
+    influence_conversation: true
+  salary:
+    type: text
+    influence_conversation: true
+  experience:
+    type: text
+    influence_conversation: true
+  skills:
+    type: text
+    influence_conversation: true
+responses:
+  utter_how_can_i_help:
+  - text: Welcome. I can create a post, a shortlist or a offer package.
+  utter_ask_post_name:
+  - text: Please tell me the post name.
+  utter_starting_salary:
+  - text: What is the starting salary.
+  utter_experience:
+  - text: Minimum years of experience?
+  utter_main_skill:
+  - text: Please provide minimum required skills.
+  utter_goodbye:
+  - text: Goodbye. Have a nice time.
+actions:
+- utter_how_can_i_help
+- utter_ask_post_name
+- utter_starting_salary
+- utter_experience
+- utter_main_skill
+- utter_goodbye
+- action_form
